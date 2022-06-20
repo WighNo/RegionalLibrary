@@ -1,0 +1,107 @@
+﻿<Page x:Class="RegionalLibrary.Pages.AddBookPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:RegionalLibrary.Pages"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      mc:Ignorable="d"
+      Title="AddBookPage" Height="455" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="0"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Foreground="Gray"
+               FontSize="32"
+               Content="Книга"/>
+        
+        <StackPanel Grid.Row="1"
+                    Margin="0, 15, 0, 0"
+                    Orientation="Horizontal">
+            
+            <StackPanel Margin="15, 75, 0, 0">
+                
+                <TextBox VerticalAlignment="Center"
+                         Width="150"
+                         mah:TextBoxHelper.UseFloatingWatermark="True"
+                         mah:TextBoxHelper.Watermark="Название"
+                         BorderThickness="0"
+                         FontSize="16"
+                         Name="BookName"/>
+                
+                <TextBox VerticalAlignment="Center"
+                         Width="150"
+                         mah:TextBoxHelper.UseFloatingWatermark="True"
+                         mah:TextBoxHelper.Watermark="Год создания"
+                         BorderThickness="0"
+                         FontSize="16"
+                         Name="BookYearOfCreation"
+                         Margin="0, 15, 0, 0"/>
+                
+                <TextBox VerticalAlignment="Center"
+                         Width="150"
+                         mah:TextBoxHelper.UseFloatingWatermark="True"
+                         mah:TextBoxHelper.Watermark="Номер стеллажа"
+                         BorderThickness="1"
+                         FontSize="16"
+                         Name="BookShelvingNumber"
+                         Margin="0, 15, 0, 0"/>
+            </StackPanel>
+            
+            <StackPanel Margin="15, 30, 0, 0">
+                <Label Content="Автор"
+                       HorizontalContentAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="22"
+                       Foreground="Gray"/>
+                <ListView 
+                            Width="210"
+                            Height="200"
+                            ItemContainerStyle="{StaticResource AuthorListViewItem}"
+                            ItemsSource="{Binding}"
+                            Name="AuthorsList"
+                            FontSize="12"
+                            Background="Transparent">
+            </ListView>
+            </StackPanel>
+            
+            <StackPanel Margin="15, 30, 0, 0">
+                <Label Content="Жанр"
+                       HorizontalContentAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="22"
+                       Foreground="Gray"/>
+                <ListView Width="180"
+                          Height="200"
+                          ItemContainerStyle="{StaticResource GenreListViewItem}"
+                          ItemsSource="{Binding}"
+                          Name="GenresList"
+                          Background="Transparent">
+                
+            </ListView>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        <Button Grid.Row="2"
+                Width="128"
+                Height="35"
+                VerticalAlignment="Center"
+                Style="{StaticResource MahApps.Styles.Button.Square.Accent}"
+                VerticalContentAlignment="Center"
+                Content="Добавить"
+                FontWeight="Black"
+                FontSize="22"
+                BorderThickness="0"
+                Foreground="White"
+                Background="#28B538"
+                Click="AddBook"/>
+        
+    </Grid>
+</Page>

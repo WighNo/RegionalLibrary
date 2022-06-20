@@ -1,0 +1,82 @@
+﻿<Page x:Class="RegionalLibrary.Pages.AddDeliveryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:RegionalLibrary.Pages"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      mc:Ignorable="d"
+      Title="AddDelivery" Height="455" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="0"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Foreground="Gray"
+               FontSize="32"
+               Content="Выдача"/>
+        
+        <StackPanel Grid.Row="1"
+                    Margin="0, 10, 0, 0">
+            
+            <DatePicker mah:TextBoxHelper.UseFloatingWatermark="True"
+                        mah:TextBoxHelper.Watermark="Дата выдачи"
+                        Width="256"
+                        Name="StartDate"/>
+            <DatePicker Margin="0, 10, 0, 0"
+                        mah:TextBoxHelper.UseFloatingWatermark="True"
+                        mah:TextBoxHelper.Watermark="Дата возврата"
+                        Width="256"
+                        Name="EndDate"/>
+            
+            <StackPanel Orientation="Horizontal"
+                        Margin="10, 50, 0, 0">
+                
+                <ListView Width="185"
+                          Height="185"
+                          Margin="0, 0, 0, 0"
+                          ItemContainerStyle="{StaticResource SmallBookListViewItem}"
+                          ItemsSource="{Binding}"
+                          Name="BookList"
+                          Background="Transparent"/>
+                
+                <ListView Width="185"
+                          Height="185"
+                          Margin="10, 0, 0, 0"
+                          ItemContainerStyle="{StaticResource EmployeeListViewItem}"
+                          ItemsSource="{Binding}"
+                          Name="VisitorsList"
+                          Background="Transparent"/>
+                    
+                <ListView Width="185"
+                          Height="185"
+                          Margin="10, 0, 0, 0"
+                          ItemContainerStyle="{StaticResource EmployeeListViewItem}"
+                          ItemsSource="{Binding}"
+                          Name="EmployeeList"
+                          Background="Transparent">
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+        
+        <Button Grid.Row="2"
+                Width="128"
+                Height="35"
+                VerticalAlignment="Center"
+                Style="{StaticResource MahApps.Styles.Button.Square.Accent}"
+                VerticalContentAlignment="Center"
+                Content="Добавить"
+                FontWeight="Black"
+                FontSize="22"
+                BorderThickness="0"
+                Foreground="White"
+                Background="#28B538"
+                Click="AddDelivery"/>
+        
+    </Grid>
+</Page>

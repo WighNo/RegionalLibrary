@@ -1,0 +1,22 @@
+﻿<Application x:Class="RegionalLibrary.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:RegionalLibrary"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                <ResourceDictionary Source="Themes/ButtonOnlyTextAnimation.xaml"/>
+                <ResourceDictionary Source="Themes/ListViewMainPageStyle.xaml"/>
+                <ResourceDictionary Source="Themes/ListViewBook.xaml"/>
+                <ResourceDictionary Source="Themes/ListViewAuthor.xaml"/>
+                <ResourceDictionary Source="Themes/ListViewGenre.xaml"/>
+                <ResourceDictionary Source="Themes/ListViewEmployee.xaml"/>
+                <ResourceDictionary Source="Themes/SmallBookListView.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

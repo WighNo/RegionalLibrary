@@ -1,0 +1,137 @@
+﻿<mah:MetroWindow x:Class="RegionalLibrary.MainWindow"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+     xmlns:local="clr-namespace:RegionalLibrary"
+     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+     mc:Ignorable="d"
+     Title="Региональная Библиотека"
+     TitleCharacterCasing="Normal"
+     Height="485" Width="800"
+     WindowTitleBrush="#45425C"
+     Background="#272537"
+     IsMinButtonEnabled="True"
+     ShowMinButton="True"
+     ResizeMode="CanMinimize"
+     WindowStartupLocation="CenterScreen"
+     BorderBrush="#45425C">
+    
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+        
+        <Grid Grid.Row="0"
+              Grid.Column="0"
+              Background="#2D2A3C">
+            
+            <StackPanel>
+                    <Label Grid.Row="0"
+                           Background="#322F41"
+                           Content="-GetBook-"
+                           Foreground="LightGray"
+                           FontSize="22"
+                           HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center"
+                           Height="50"
+                           Width="201"/>
+                    
+                    <Button Height="25"
+                            Margin="0, 12, 0, 0"
+                            Background="Transparent"
+                            Content="Главная"
+                            FontSize="20"
+                            Style="{StaticResource ControlPanelButton}"
+                            Name="OpenMainPage"
+                            Click="OpenPage"/>
+                
+                    <Label Margin="0, 15, 0, 0"
+                           Background="#312D40"
+                           Height="5"/>
+                
+                <Button Height="25"
+                        Margin="0, 15, 0, 0"
+                        Background="Transparent"
+                        Content="Добавить Автора"
+                        FontSize="16"
+                        Style="{StaticResource ControlPanelButton}"
+                        Name="OpenAddAuthor"
+                        Click="OpenPage"/>
+                
+                <Button Height="25"
+                        Margin="0, 20, 0, 0"
+                        Background="Transparent"
+                        Content="Добавить Жанр"
+                        FontSize="16"
+                        Style="{StaticResource ControlPanelButton}"
+                        Name="OpenAddGenre"
+                        Click="OpenPage"/>
+                
+                <Button Height="25"
+                        Margin="0, 20, 0, 0"
+                        Background="Transparent"
+                        Content="Добавить Книгу"
+                        FontSize="16"
+                        Style="{StaticResource ControlPanelButton}"
+                        Name="OpenAddBook"
+                        Click="OpenPage"/>
+                
+                <Label Margin="0, 15, 0, 0"
+                       Background="#312D40"
+                       Height="5"/>
+                
+                <Button Height="25"
+                        Margin="0, 15, 0, 0"
+                        Background="Transparent"
+                        Content="Добавить Сотрудника"
+                        FontSize="15"
+                        Style="{StaticResource ControlPanelButton}"
+                        Name="OpenAddEmployee"
+                        Click="OpenPage"/>
+                
+                <Button Height="25"
+                        Margin="0, 20, 0, 0"
+                        Background="Transparent"
+                        Content="Добавить Посетителя"
+                        FontSize="15"
+                        Style="{StaticResource ControlPanelButton}"
+                        Name="OpenAddVisitor"
+                        Click="OpenPage"/>
+                
+                <Label Margin="0, 15, 0, 0"
+                       Background="#312D40"
+                       Height="5"/>
+                
+                <Button Height="25"
+                        Margin="0, 10, 0, 0"
+                        Background="Transparent"
+                        Content="Активные Выдачи"
+                        FontSize="16"
+                        Style="{StaticResource ControlPanelButton}"
+                        Name="OpenActiveDeliveries"
+                        Click="OpenPage"/>
+                    
+                    <Button Height="25"
+                            Margin="0, 15, 0, 0"
+                            Background="Transparent"
+                            Content="Создать Выдачу"
+                            FontSize="16"
+                            Style="{StaticResource ControlPanelButton}"
+                            Name="OpenCreateDelivery"
+                            Click="OpenPage"/>
+                
+            </StackPanel>
+        </Grid>
+        
+        <Frame  Grid.Column = "1"
+                Grid.Row="0" x:Name="Main" 
+                NavigationUIVisibility="Hidden"/>
+    </Grid>
+</mah:MetroWindow>
